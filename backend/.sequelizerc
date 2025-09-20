@@ -1,0 +1,24 @@
+const path = require('path');
+
+/**
+ * Configuration file for the Sequelize CLI.
+ *
+ * This file specifies the paths to key directories and files that Sequelize
+ * needs to execute command-line operations, such as running migrations and seeders.
+ * By defining these paths, you can organize your project structure cleanly
+ * (e.g., by keeping all source code inside a 'src' directory).
+ */
+module.exports = {
+  // Path to the main database configuration file.
+  // Note: It points to the '.cjs' version to ensure compatibility with Node's module system.
+  'config': path.resolve('src', 'config', 'config.cjs'),
+
+  // Path to the directory containing all your Sequelize models.
+  'models-path': path.resolve('src', 'models'),
+
+  // Path to the directory where all migration files will be stored.
+  'migrations-path': path.resolve('src', 'migrations'),
+
+  // Path to the directory where all seeder files (for populating the DB with initial data) will be stored.
+  'seeders-path': path.resolve('src', 'seeders'),
+};
