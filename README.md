@@ -31,7 +31,7 @@ Git
 
 1. Clone & Setup
 # Clone the repository
-git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
+git clone (https://github.com/arhasi11/roxiler-fullstack-challenge)
 cd your-repository-name
 
 2. Run the Backend
