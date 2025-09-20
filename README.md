@@ -1,72 +1,124 @@
 <div align="center">
 
 Roxiler Full-Stack Coding Challenge
-A modern, production-ready web application built with Node.js, Express, PostgreSQL, and React, featuring a multi-role authentication system and interactive dashboards.
+A modern, production-ready web application built with Node.js, Express, PostgreSQL, and React. This project features a secure multi-role authentication system, interactive dashboards, and a clean, responsive user interface.
 
 </div>
 
-✨ Core Features
-Multi-Role Authentication: Secure login for Admins, Store Owners, and Users using JWT.
+<div align="center">
 
-Interactive Dashboards: Role-specific dashboards with statistics and data management.
+</div>
 
-Store Rating System: Users can find, rate, and update ratings for stores.
+✨ Features
+Multi-Role Authentication: Secure login system for Admin, Store Owner, and Normal User roles using JWT.
 
-Secure & Performant: Built with security best practices and optimized database queries.
+Admin Dashboard: A comprehensive dashboard with statistics, sortable/filterable user and store lists, and user creation capabilities.
+
+Owner Dashboard: A personalized view for store owners to see their stores' average ratings and detailed user feedback.
+
+User Store View: A responsive, searchable list of all stores where users can submit and update their ratings.
+
+Secure & Performant: Implements best practices for security (password hashing, environment variables) and performance (optimized database queries).
+
+Modern UI/UX: A clean, responsive, and intuitive user interface built with React and Tailwind CSS.
+
+📸 Screenshots
+Login Page
+
+Admin Dashboard
+
+User Stores View
+
+
+
+
+
+
 
 🛠️ Tech Stack
-Backend: Node.js, Express.js, PostgreSQL, Sequelize
+Backend: Node.js, Express.js, PostgreSQL, Sequelize (ORM)
 
 Frontend: React, Vite, Tailwind CSS
 
-Authentication: JWT, bcryptjs
+Authentication: JSON Web Tokens (JWT), bcryptjs
 
-🚀 Quick Start
+Validation: express-validator (Backend)
+
+🚀 Getting Started
 Prerequisites
-Node.js (v18+)
+Node.js (v18 or later)
 
 PostgreSQL
 
 Git
 
-1. Clone & Setup
-# Clone the repository
-git clone (https://github.com/arhasi11/roxiler-fullstack-challenge)
+1. Clone the Repository
+git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
 cd your-repository-name
 
-2. Run the Backend
-# Navigate to the backend folder
+2. Backend Setup
+# Navigate to the backend directory
 cd backend
 
 # Install dependencies
 npm install
 
-# Copy .env.example to .env and fill in your database details
+# Create the .env file (copy from .env.example)
 cp .env.example .env
 
-# Run database migrations
+# --- IMPORTANT ---
+# Edit the .env file with your PostgreSQL database credentials.
+
+# Run the database migrations to create the tables
 npx sequelize-cli db:migrate
 
-# Start the server
+# Start the backend server
 npm run dev
-# Backend is now running on http://localhost:4000
 
-3. Run the Frontend
-# In a new terminal, navigate to the frontend folder
+The backend will be running on http://localhost:4000.
+
+3. Frontend Setup
+# Open a new terminal and navigate to the frontend directory
 cd frontend
 
 # Install dependencies
 npm install
 
-# Start the client
-npm run dev
-# Frontend is now running on http://localhost:5173
+# Create the .env file (copy from .env.example)
+# No changes are needed for local development
+cp .env.example .env
 
-👤 Create an Admin User
+# Start the frontend development server
+npm run dev
+
+The frontend will be running on http://localhost:5173.
+
+👤 Initial Admin User
+To access the admin dashboard, you need to create an initial admin user. The recommended way is to temporarily modify the auth.controller.js signup function, and then change it back.
+
 Open backend/src/controllers/auth.controller.js.
 
 In the signup function, temporarily change role: 'user' to role: 'admin'.
 
-Register a new user via the signup page. This user is now an admin.
+Register a new user through the frontend signup page. This user will now be an admin.
 
-Important: Revert the change back to role: 'user'.
+IMPORTANT: Change the line back to role: 'user' to ensure regular users cannot register as admins.
+
+📂 Project Structure
+roxiler-project/
+├── backend/
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middlewares/
+│   │   ├── migrations/
+│   │   ├── models/
+│   │   └── routes/
+│   └── ...
+└── frontend/
+    ├── src/
+    │   ├── api/
+    │   ├── components/
+    │   ├── pages/
+    │   └── utils/
+    └── ...
