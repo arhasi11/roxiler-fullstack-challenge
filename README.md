@@ -1,126 +1,72 @@
 <div align="center">
 
 Roxiler Full-Stack Coding Challenge
-A modern, production-ready web application built with Node.js, Express, PostgreSQL, and React. This project features a secure multi-role authentication system, interactive dashboards, and a clean, responsive user interface.
+A modern, production-ready web application built with Node.js, Express, PostgreSQL, and React, featuring a multi-role authentication system and interactive dashboards.
 
 </div>
 
-<div align="center">
+✨ Core Features
+Multi-Role Authentication: Secure login for Admins, Store Owners, and Users using JWT.
 
-</div>
+Interactive Dashboards: Role-specific dashboards with statistics and data management.
 
-✨ Features
-Multi-Role Authentication: Secure login for Admin, Store Owner, and Normal Users using JWT.
+Store Rating System: Users can find, rate, and update ratings for stores.
 
-Admin Dashboard: Comprehensive dashboard with statistics, sortable/filterable user and store lists.
-
-Owner Dashboard: Personalized view for store owners to see their stores' average ratings and detailed user feedback.
-
-User Store View: A responsive, searchable list of all stores where users can submit and update their ratings.
-
-Secure & Performant: Implements best practices for security (password hashing, environment variables) and performance (optimized database queries).
-
-Modern UI/UX: A clean, responsive, and intuitive user interface built with React and Tailwind CSS.
-
-📸 Screenshots
-Login Page
-
-Admin Dashboard
-
-User Stores View
-
-
-
-
-
-
+Secure & Performant: Built with security best practices and optimized database queries.
 
 🛠️ Tech Stack
-Backend: Node.js, Express.js, PostgreSQL, Sequelize (ORM)
+Backend: Node.js, Express.js, PostgreSQL, Sequelize
 
 Frontend: React, Vite, Tailwind CSS
 
-Authentication: JSON Web Tokens (JWT), bcryptjs
+Authentication: JWT, bcryptjs
 
-Validation: express-validator (Backend)
-
-🚀 Getting Started
+🚀 Quick Start
 Prerequisites
-Node.js (v18 or later)
+Node.js (v18+)
 
 PostgreSQL
 
 Git
 
-1. Clone the Repository
+1. Clone & Setup
+# Clone the repository
 git clone [https://github.com/your-username/your-repository-name.git](https://github.com/your-username/your-repository-name.git)
 cd your-repository-name
 
-2. Backend Setup
-# Navigate to the backend directory
+2. Run the Backend
+# Navigate to the backend folder
 cd backend
 
 # Install dependencies
 npm install
 
-# Create the .env file (copy from .env.example)
+# Copy .env.example to .env and fill in your database details
 cp .env.example .env
 
-# --- IMPORTANT ---
-# Edit the .env file with your PostgreSQL database credentials.
-
-# Run the database migrations to create the tables
+# Run database migrations
 npx sequelize-cli db:migrate
 
-# Start the backend server
+# Start the server
 npm run dev
+# Backend is now running on http://localhost:4000
 
-The backend will be running on http://localhost:4000.
-
-3. Frontend Setup
-# Open a new terminal and navigate to the frontend directory
+3. Run the Frontend
+# In a new terminal, navigate to the frontend folder
 cd frontend
 
 # Install dependencies
 npm install
 
-# Create the .env file (copy from .env.example)
-# No changes are needed for local development
-cp .env.example .env
-
-# Start the frontend development server
+# Start the client
 npm run dev
+# Frontend is now running on http://localhost:5173
 
-The frontend will be running on http://localhost:5173.
-
-👤 Initial Admin User
-To access the admin dashboard, you need to create an initial admin user. The recommended way is to temporarily modify the auth.controller.js signup function to create an admin, and then change it back.
-
+👤 Create an Admin User
 Open backend/src/controllers/auth.controller.js.
 
 In the signup function, temporarily change role: 'user' to role: 'admin'.
 
-Register a new user through the frontend signup page. This user will now be an admin.
+Register a new user via the signup page. This user is now an admin.
 
-IMPORTANT: Change the line back to role: 'user' to ensure regular users cannot register as admins.
-
-📂 Project Structure
-roxiler-project/
-├── backend/
-│   ├── src/
-│   │   ├── config/
-│   │   ├── controllers/
-│   │   ├── middlewares/
-│   │   ├── migrations/
-│   │   ├── models/
-│   │   └── routes/
-│   └── ...
-└── frontend/
-    ├── src/
-    │   ├── api/
-    │   ├── components/
-    │   ├── pages/
-    │   └── utils/
-    └── ...
-
-This README provides a clear and professional overview of your project, making it easy for anyone to understand, set up, and appreciate your work.
+Important: Revert the change back to role: 'user'.
